@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML5">
+   <style>
+      body 
+        {
+            color: white;
+            background-image: url("https://wallpaperaccess.com/full/2690549.jpg");
+            background-position-x: center;
+            background-position-y:center;
+            background-size: 80%;
+            height: 100%;
+            width: 100px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+    <title>Formulário hotelaria</title>
+</head>
+<body>
+
+    <h1>Formulário</h1> 
+    <form action="#" method="post" oninput="total.value = ((noites.valueAsNumber * 250) + (hospede.valueAsNumber -1) * 50)">
+        
+            <!--Caixa nome-->
+        <fieldset>
+            <div class="campo">
+                <label>Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite o  nome" style="width: 20em" required>   
+            </div>
+
+            <!--Botões de seleção de sexo-->
+            <div class="campo">
+                <label class="checkbox">
+                    <input type="radio" name="sexo" value="masculino">Masculino</label>
+                    <label class= "checkbox">
+                        <input type="radio" name="sexo"value="feminino">Feminino</label></br>
+                        <br>
+                    </div>
+
+                     <!--Caixas de email-->
+                    <div class="campo">
+                        <label>Email</label>
+                        <input type="email">
+                        <div class="campo">
+                            <label>Repita o email:</label>
+                            <input type=" email" id="email_repeti" name="email_repeti"requiredoninput="check(this)">
+                        </br>
+                        <br>
+                    </div>
+
+                      <!--Calendário para check-in-->
+                    <div class =" campo">
+                        <label>Data de chegada:</label>
+                        <input type="date"id="dt_chegada"name="dt_chegada"required>
+                    </br>
+                    <br>
+                </div>
+
+                   <!--Quantidade de dias-->
+                <div class="campo">
+                    <label>Numero de noites(R$250,00 por noite):</label>
+                    <input type="number"id="noites"name="noites"value="1"min="1"max="30"required>
+                </br>
+                <br>
+            </div>
+
+              <!--Número de hóspedes-->
+            <div class="campo">
+                <label>Numero de hospedes(R$50,00 adcional por noite):</label>
+                <input type="number"id="hospede"name="hospede"value="1"min="1"max="4"required>
+            </br>
+            <br>
+        </div>
+
+          <!--Este contador irá fazer um balanço monetário dos dias e hóspedes e irá dizer o valor a pagar-->
+        <fieldset class="grupo">
+            <div class="campo">
+                <label>Total estimado:</label>R$
+                <output id="total"name="total">250</output>.00<br>
+            </div>
+        </fieldset>
+        <br>
+
+         <!--Caixa de mensagens-->
+        <div class="campo">
+            <label>Mensagem</label>
+            <textarea name="message"style="width:40em"placeholder="Algum comentario extra?"></textarea>
+        </br>
+        <br>
+    </div>
+
+      <!--Caixa para o código promocional de desconto
+    PS: Ele irá dizer que o código deve ser digitado em 6 caracteres alfanuméricos-->
+    <div class="campo">
+        <label>Codigo promocional:</label>
+        <input type="text"id="promo"name="promo"pattern="[A-Za-z0-9]{6}"title="Codigo promocional consiste em 6 caracteres alphanumericos.">
+    </br>
+    <br>
+</div>
+
+   <!--Newsletter-->
+<div class="campo">
+    <label>Newsletter</label>
+    <label class="checkbox">
+        <input type="checkbox"name="newsletter"value="1">Gostaria dereceber a nossa Newsletter?</label>
+    </br>
+    <br>
+</div>
+
+<!--Botão para dar submit e finalizar o requerimento-->
+<button class="botaosubmit"type="submit"name="submit">Requerer reserva</button>
+     </div>
+        </fieldset>
+    </form>
+</body>
+</html>
